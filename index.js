@@ -1,6 +1,5 @@
 
 let express = require('express');
-let axios = require('axios');
 let bp = require('body-parser');
 
 let app = express();
@@ -17,7 +16,7 @@ app.route('/')
     .post((req, res) => {
         
         setTimeout(function() {
-            res.send(req.body);
+            res.send(`<h1>res send is working</h1>`);
         }, 4000); 
 
     })

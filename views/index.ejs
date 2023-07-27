@@ -15,9 +15,8 @@
 
           $.post("/", data, function (result, status) {
             $("h1").text("");
-            $("#message").text(
-              `You entered the following data: ${result.text}, with the HTTP status code of ${status}.`
-            );
+            $("#message").text(`Res send is working with HTML.`);
+            $("#message").append(result);
           });
         });
       });
