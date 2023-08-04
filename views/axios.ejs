@@ -20,10 +20,8 @@
 
       form.addEventListener("submit", async function (e) {
         e.preventDefault();
-        let formData = document.querySelector("form");
 
         message.textContent = "Waiting...";
-        const data = new FormData(formData);
 
         let result = await axios.post(
           "/axios",

@@ -1,6 +1,7 @@
 
 let express = require('express');
 let bp = require('body-parser');
+let axios = require('axios').default;
 
 let app = express();
 
@@ -8,6 +9,8 @@ app.use(bp.json());
 app.use(bp.urlencoded({ extended: true }));
 
 app.set('view engine', 'ejs');
+
+let pool = require('./database')
 
 app.route('/')
     .get((req, res) => {
@@ -30,6 +33,7 @@ app.route('/axios')
             res.send(`Axios message: ${req.body.text}. It works!`);
         }, 3000);
     })
+// what about event emitter while maintaining state of matching algorithm
 
 app.listen(5000);
 
