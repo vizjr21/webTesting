@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experiment with JQuery and AJAX</title>
+  </head>
+  <body>
+    <button><a href="/">AJAX POST Request</a></button>
+    <form id="form">
+      <p id="title">An Axios Form</p>
+      <textarea id="textarea" name="text"></textarea>
+      <button type="submit"></button>
+    </form>
+    <p id="message">You haven't submitted the form yet.</p>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      let form = document.querySelector("form");
+      let message = document.getElementById("message");
+
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        let formData = document.querySelector("form");
+
+        message.textContent = "Waiting...";
+        const data = new FormData(formData);
+
+        let result = await axios.post(
+          "/axios",
+          document.querySelector("form"),
+          { headers: { "content-Type": "application/json" } }
+        );
+        message.textContent = `${result.data}`;
+      });
+    </script>
+  </body>
+</html>
