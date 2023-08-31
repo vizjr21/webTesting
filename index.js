@@ -7,6 +7,7 @@ let app = express();
 
 app.use(bp.json());
 app.use(bp.urlencoded({ extended: true }));
+app.use("/public", express.static("public"));
 
 app.set('view engine', 'ejs');
 

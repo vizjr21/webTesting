@@ -3,9 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAY0TB99d81KOOEN4x1qGrXR6L-zayP03A&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <link rel="stylesheet" href="/public/styles.css" />
+    <script src="/public/scripts.js"></script>
     <title>Experiment with JQuery and AJAX</title>
   </head>
   <body>
+    <div id="gmp-map"></div>
     <button><a href="/">AJAX POST Request</a></button>
     <form id="form">
       <p id="title">An Axios Form</p>
